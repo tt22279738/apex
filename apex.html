@@ -1,0 +1,940 @@
+<!doctype html>
+<html>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>APEX</title>
+	<script>
+	$(function(){
+		$('#BackTop').click(function(){ 
+			$('html,body').animate({scrollTop:0}, 333);
+		});
+		$(window).scroll(function() {
+			if ( $(this).scrollTop() > 300 ){
+				$('#BackTop').fadeIn(222);
+			} else {
+				$('#BackTop').stop().fadeOut(222);
+			}
+		}).scroll();
+	});
+  </script>
+	<style>
+		body{
+			margin: 0px;
+			
+		}
+		.container{
+			width: 100vw;
+			height: 100vw;
+			border-width: 1px;
+			border-style: solid;
+			display: grid;
+			grid-template-columns: 25% 19% 18% 18% 20%;
+			grid-template-rows:200px 50px 1000px;
+			grid-gap: 10px;
+			padding:10px;
+			box-sizing: border-box;
+			
+		}
+		div.header{
+			grid-column-start: 1;
+			grid-column-end: 6;
+			background-color: red;
+			background-repeat: no-repeat;
+			background-size: 100%;
+			
+		}
+
+		h1.header{
+			text-align: center;	
+			padding-top: 33px;
+			font-size: 300%;
+			text-shadow: 2px 2px 10px #000000;
+			color:antiquewhite;
+			}
+		aside.cha{
+			flex: 10px;
+			background-color:#CD3333;
+			padding: 20px;
+			text-align: center;
+			font-size: 140%;
+			color: white;
+		}
+		
+		aside.video{
+			flex: 10px;
+			background-color:blanchedalmond;
+			padding: 20px;
+			text-align: center;
+			font-size: 170%;
+			color: brown;
+		}
+		section{
+			flex: 70%;
+			background-color: black;
+			padding: 20px;
+			grid-column-start: 2;
+			grid-column-end: 5;
+				
+		}
+		p{
+			font-size: 120%;
+			color: white;
+		}
+		h1.title{
+			color: white;
+		}
+		h3.title{
+			color: white;}
+		p.intro{
+			color: brown;
+			font-size: 110%;
+		}
+		h2.aside{
+			text-shadow: 2px 2px 10px #000000;
+		}
+		.toTop-arrow {
+		width: 3rem;
+		height: 3rem;
+		padding: 0;
+		margin: 0;
+		border: 0;
+		border-radius: 33%;
+		opacity: 0.6;
+		background: #000;
+		cursor: pointer;
+		position:fixed;
+		right: 1rem;
+		bottom: 1rem;
+		display: none;
+	}
+	.toTop-arrow::before, .toTop-arrow::after {
+		width: 25px;
+		height: 6px;
+		border-radius: 3px;
+		background: #f90;
+		position: absolute;
+		content: "";
+	}
+	.toTop-arrow::before {
+		transform: rotate(-45deg) translate(0, -50%);
+		left: 0.42rem;
+	}
+	.toTop-arrow::after {
+		transform: rotate(45deg) translate(0, -50%);
+		right: 0.42rem;
+	}	
+	.toTop-arrow:focus {outline: none;}
+
+      nav a{
+			color: white;
+			padding: 14px 20px;
+			text-decoration: none;
+			font-size: 160%;
+		}
+		a:hover{
+			color: yellow;
+		}
+		nav{
+			display: flex;
+			flex-direction:row;
+			background-color: black;
+			grid-column-start: 1;
+			grid-column-end: 6;
+			grid-gap: 0px;
+			
+		}
+	.dropbtn {
+    color: white;
+	background-color:rgba(255,255,255,0.0);
+	
+    padding: 13px;
+	padding-top: 14px;
+    font-size: 27px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    color: yellow;
+}
+	</style>
+</head>
+	
+<body>
+		<button type="button" id="BackTop" class="toTop-arrow"></button>
+	<div class="container">
+		<div class="header">
+			<h1 class="header">APEX英雄介紹</h1>
+		</div>
+		<nav class="button">
+
+		<div class="dropdown">
+      <button class="dropbtn">所有英雄</button>
+      <div class="dropdown-content">
+      <a href="#dog">尋血犬</a>
+      <a href="#gibby">直布羅陀</a>
+      <a href="#ll">生命線</a>
+	<a href="#robot">探路者</a>
+		  <a href="#wraith">惡靈</a>
+		  <a href="#smoke">邦加羅爾</a>
+		  <a href="#gas">腐蝕</a>
+		  <a href="#mirage">幻象</a>
+		  <a href="#oc">辛烷</a>
+		  <a href="#wattson">華森</a>
+		  <a href="#plane">暗碼士</a>
+		  <a href="#rev">亡靈</a>
+		  <a href="#loba">羅芭</a>
+		  <a href="#ram">蕾帕特</a>
+		  <a href="#horizon">天際線</a>
+		  <a href="#fuse">轟哥</a>
+		  <a href="#valk">瓦爾基里</a>
+		  <a href="#seer">席爾</a>
+		  <a href="#ash">艾許</a>
+		  <a href="#maggie">瘋狂瑪吉</a>
+	  <a href="#newcastle">紐卡索</a>
+		 
+  </div>
+</div>
+	</nav>
+
+
+
+	  <aside class="cha" id="dog">
+		<h2 class="aside"><strong>尋血犬<br>bloodhound</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-bloodhound.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">科技追蹤者</h1><h3 class="title">「我是上天派遣的獵人。」</h3>
+		
+		<p>尋血犬是邊疆最厲害的獵人之一。其父母是兩名駐守於塔羅斯新黎明工業工廠的工程師，但是在一場熔毀的意外中，這座設施被徹底摧毀，並導致尋血犬父母雙亡。叔叔亞瑟收留了尋血犬，並傳授了昔日之道－崇尚自然並拒絕現代科技的信仰。然而，尋血犬不斷受到科技的奇蹟所引誘，最後使用同時揉合新舊的手法擊殺了一隻殘害村民的巨無霸，但同時這也永遠改變了族人們的生活方式。
+			
+			<br><br>尋血犬的追蹤能力能夠大大地協助任何小隊，幫助隊伍找到隱藏的對手並追蹤敵人的動向。呼喚著地球中古老的北歐神明來指引大家，尋血犬相信命運已經決定並且將會帶領大家走向死亡。不過這個知識伴隨著力量，因為在那天來臨之前，尋血犬知道自己無人能擋。</p>
+		
+		<p><b>真實姓名</b>：未知<br><b>年齡</b>：未知<br><b>家鄉星球</b>：塔羅斯<br><br><br>
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-bloodhound.png.adapt.crop16x9.652w.png" width="15%"><b style="color: red"><br>
+			戰術技能</b><br> 上帝之眼--短暫顯示前方所有建築中的隱藏敵人、陷阱及線索。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-bloodhound.png.adapt.crop16x9.652w.png" width="15%"><br>
+			<b style="color: red">被動技能</b><br>追蹤器--看見敵人所留下的蹤跡。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-bloodhound.png.adapt.crop16x9.652w.png" width="15%"><br>
+			<b style="color: red">絕招</b><br>狩獵野獸--強化感知，提升移動速度並標示獵物。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">CrAcY 虧喜 feat.Kaizer<br>尋血犬入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/C2wcYqVir5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br>
+			<p class="intro">邊疆故事--昔日之道</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/dCXOnxM8sdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+	
+		<aside class="cha" id="gibby">
+		<h2 class="aside"><strong>直布羅陀<br>Gibraltar</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-gibraltar.png.adapt.crop16x9.1023w.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">防護堡壘</h1><h3 class="title">「喂，來動我啊，會很有趣的。」</h3>
+		
+		<p>直布羅陀是一名溫柔的巨人，但他也有瘋狂的一面。身為兩名 SARAS（索拉斯搜索與救援組織）自願者的兒子，他從小就懂得如何幫助他人擺脫邊疆的各種危險情況。然而，當他和他的男友偷騎父親的摩托車並受困於危險的土石流中後，他才了解到保護他人的真正意義。他的父母救出了他，而他的父親卻在這段過程中失去了一條手臂。直布羅陀至今不忘父親的犧牲並致力於幫助那些需要幫助的人。
+			
+			<br><br>Apex 競賽並沒有改變這一點，但是他們卻改變了其中的意義。多年來，許多直布羅陀的朋友和同事們都去參與這場競賽以求財富、名聲與榮耀，但是有許多人從此一去不回。直布羅陀加入了競賽來保護他們，他身為救援人員的技能和叛逆的個性首次如此融洽地相輔相成。他現在成為了 Apex 競賽中的標誌性人物，他常常衝向戰火來保護隊友並讓對手為了尋找掩護而四處逃竄。</p>
+		
+		<p><b>真實姓名</b>：馬科阿‧直布羅陀<br><b>年齡</b>：30<br><b>家園</b>：慰藉<br><br><br>
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-gibraltar.png.adapt.crop16x9.652w.png" width="15%"><b style="color: red"><br>
+			戰術技能</b><br> 保護圓頂--投放圓頂防護罩並格擋攻擊。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-gibraltar.png.adapt.crop16x9.652w.png" width="15%"><br>
+			<b style="color: red">被動技能</b><br>槍盾--瞄準時將會部屬槍盾並阻擋來襲火力。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-gibraltar.png.adapt.crop16x9.652w.png" width="15%"><br>
+			<b style="color: red">絕招</b><br>防禦性轟炸--在你標記的地點呼叫密集的迫擊炮轟炸。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">CrAcY 虧喜 feat.董哥<br>直布羅陀入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/GvLxnvLx6CE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br>
+			<p class="intro">角色預告片</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/ccDyztf9FjU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="ll">
+		<h2 class="aside"><strong>生命線<br>Lifeline</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-lifeline.png.adapt.crop16x9.1023w.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">戰鬥醫療兵</h1><h3 class="title">「永不放棄想贏就得這樣。」</h3>
+		
+		<p>阿傑‧切，綽號「生命線」，她並不是普通的 Apex 競賽參賽者。她出生於富裕的戰爭奸商家庭中，但當她發現自己家人的行為對世界所造成的傷害後，她便離家出走並加入了邊境軍團，這是一個幫助邊境社群的人道組織。她從此致力於幫助他人，她還加入了 Apex 競賽來為邊境軍團提供資金。
+			
+			<br><br>此競賽中沒有無辜的受害者－－大家在加入的時候都知道其中的危險，因此，她每次取得勝利時都能夠幫助那些需要幫助的人，生命線並不在意參與這項受歡迎的血腥運動。至少，她是這麼說服自己的。她或許看似刻薄、無情，但是在她內心深處，她不過是想要幫助他人並將世界變得更加美好。為了達成目的，即便必須解決一些人她也在所不惜。</p>
+		
+		<p><b>真實姓名</b>：阿傑‧切<br><b>年齡</b>：24<br><b>家園</b>：普薩瑪忒<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-lifeline.png.adapt.crop16x9.652w.png" width="15%"><b style="color: red"><br>
+			戰術技能</b><br>D.O.C.治療機器人--呼叫你的慈悲機器人並自動持續治療附近的隊友。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-lifeline.png.adapt.crop16x9.652w.png" width="15%"><br>
+			<b style="color: red">被動技能</b><br>戰鬥醫療兵--部屬D.O.C來復活隊友，讓你能自由移動及防禦。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-lifeline.png.adapt.crop16x9.652w.png" width="15%"><br>
+			<b style="color: red">絕招</b><br>照護艙--呼叫充滿高級防禦裝備的空投箱。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">CrAcY 虧喜<br>生命線入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/zDBAuuzUFOg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br>
+			<p class="intro">DrJimpae 占皮<br>官方角色故事背景<br>辛烷和生命線的對話</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/vDdgs_Oihdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		<aside class="cha" id="robot">
+		<h2 class="aside"><strong>探路者<br>Pathfinder</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-pathfinder.png.adapt.crop16x9.1023w.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">先鋒斥侯</h1><h3 class="title">「失敗可不是什麼好玩的事，所以我從來都不失敗。」</h3>
+		
+		<p>即便深處困境，探路者卻總是非常樂觀。一架經過改造的馬文機器人（又稱機動機械多功能實體），擅長偵察與探勘地區。數十年前，他在一座遺棄的實驗室中突然啟動，他並不了解自己是誰創造的或是自己的目的為何。他對自己身份的唯一線索是他的的馬文指示，探路者因此踏上了一段旅程來尋找自己的創造者。
+			
+			<br><br>探路者在他的旅途中學到了很多東西（像是怎麼燉美味的東方利維坦湯），但是他卻還是沒有自己創造者的線索。不過他卻沒有放棄，他加入了 Apex 競賽來吸引自己創造者的注意。同時，他保持積極樂觀的態度並且非常喜歡交新朋友（然後射殺他們）。</p>
+		
+		<p><b>真實姓名</b>：馬文<br><b>年齡</b>：他也很想知道。<br><b>家鄉星球</b>：他正在努力找出真相！<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-pathfinder.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>鉤爪--用來快速達到難以抵達處的鉤爪。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-pathfinder.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>內線情報--掃描偵查訊號台來揭露下一個圓圈地點。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-pathfinder.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>滑索槍--打造滑索供大家使用。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為feat.百弟<br>探路者入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/86J7e54AnSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--搏鬥之夜</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/iT4C1aIS9Ww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+				<aside class="cha" id="wraith">
+		<h2 class="aside"><strong>惡靈<br>Wraith</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-wraith.png.adapt.crop16x9.1023w.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">跨維度散兵</h1><h3 class="title">「生與死不過一線之間，你可以到那裏找我。」</h3>
+		
+		<p>惡靈是一名如旋風般的戰士，她能夠遞出致命的攻擊並透過撕開現實裂縫來操控時空－－但這些力量卻有個代價。幾年前，她在 IMC 的禁閉設施中醒來並且沒有任何過去的回憶。資深科學家鐵馭蕾妮‧布萊西自願擔任她自己實驗的小白鼠……她的合作伙伴背叛了她，並將她鎖了起來……現在，此人已不復存在。所剩的只是一名羞怯的女孩，受自己腦海中的回音所驚嚇，直到另一個版本的她出現並教她如何聆聽這些聲音。在她的帶領下，惡靈找到了力量來逃離這座監獄並進入一個不同的現實－－這個現實。
+			
+			<br><br>終於獲得自由的惡靈仍然沒有任何回憶，她繼續著自己的任務並尋找著自己在實驗前究竟是個什麼樣的人。由於許多 Apex 競賽都在 IMC 基地上進行，惡靈現在透過參賽來進入這些神秘的設施並深入瞭解她自己是誰。她留在 Apex 競賽之中，隨著一場場的比賽，她將越來越接近真相。</p>
+		
+		<p><b>真實姓名</b>：蕾妮‧布萊西<br><b>年齡</b>：32<br><b>家鄉星球</b>：堤豐<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-wraith.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>踏入虛空--進入安全的虛空中來快速走位並迴避所有傷害。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-wraith.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>魔音傳腦--一道聲音將在危險接近時警告你。在你看來，它應該是在幫助你。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-wraith.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>維度裂縫--使用傳送門連結兩個位置60秒，你的整隻小隊都能使用它們。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為feat.咩嬸<br>惡靈入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/tTwfItBf85k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--虛空行者</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/yU_eip8IvQU?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="smoke">
+		<h2 class="aside"><strong>邦加羅爾<br>Bangalore</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-bangalore.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">職業士兵</h1><h3 class="title">「你挑武器，我一樣能戰勝你。」</h3>
+		
+		<p>生於軍事家庭，她的父母和四位哥哥都在 IMC 中服役，而邦加羅爾更是一輩子都展現了出色的軍事天賦。致力為 IMC 的目標而奉獻，她在 IMC 軍事學院中是班上的榜首，她是唯一一名能夠蒙著眼睛在二十秒內拆開和平使者、裝上精準束流器輔助器並將其重新組裝的學生。
+			
+			<br><br>網架星之戰後的幾個月，IMS 赫斯蒂雅號上，安妮塔和她哥哥傑克森受到未知敵人所攻擊。炸彈在船艦外甲上炸出了一個洞……不過傑克森為了救她犧牲了自己的性命。安妮塔無助地看著傑克森被吸入太空之中。在組織的星球上墜毀後，安妮塔尋找著工作和她不願相信已經死去的哥哥，這樣他們才能夠一起踏上需要數十年的回家之路。現在，她在 Apex 競賽中戰鬥來賺錢，一心希望能夠找到願意載她回家的駕駛並讓她跟剩餘的家人團圓。</p>
+		
+		<p><b>真實姓名</b>：安妮塔‧威廉斯<br><b>年齡</b>：38<br><b>家鄉星球</b>：網架<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-bangalore.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>煙霧彈發射器--發射高速煙霧罐，在撞擊時爆炸並形成一道煙牆。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-bangalore.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>疾步--奔跑時受到攻擊將會提升你的移動速度一小段時間。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-bangalore.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>雷聲滾滾--呼叫緩慢散佈於整個場地的空襲。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">CrAcY 虧喜<br>邦加羅爾入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/hp0wes2oP50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--網架星</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/JRRJQp2Bdwo?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="gas">
+		<h2 class="aside"><strong>腐蝕<br>Caustic</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-caustic.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">劇毒陷阱手</h1><h3 class="title">「我不在乎螻蟻的野心。」</h3>
+		
+		<p>亞歷山大·諾克斯曾經是亨伯特實驗室最聰明的科學家之一，這是邊境的氣態農藥製造商龍頭。諾克斯日以繼夜地開發新的農藥配方來保護並維持邊疆的農作物。但他很快意識到，他的進度受到了測試方法所阻礙。他需要的測試不能僅限於惰性組織，他需要活的實驗品。
+			
+			<br><br>在秘密研究之中，諾克斯逐漸開始欣賞他的作品與其摧毀一切的能力。但是亨伯特實驗室的主管卻現了他殘忍的實驗，他們在一番爭論後，實驗室燃起了熊熊烈火。現在，他已腐蝕之名參賽，他將自己創造的毒氣用於 Apex 競賽之中並興致勃勃地觀察其效果。</p>
+		
+		<p><b>真實姓名</b>：亞歷山大‧諾克斯<br><b>年齡</b>：48<br><b>家鄉星球</b>：蓋亞<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-caustic.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>夜神毒氣陷阱--投擲被射中或是敵人觸發時會持續釋放「夜神」毒氣的罐子。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-caustic.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>夜神視線--讓你能夠看穿自己的毒霧並發現敵人。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-caustic.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>夜神毒氣手榴彈--以夜神毒氣覆蓋大量範圍。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">CrAcY 虧喜<br>腐蝕入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/idK1tCpjA3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">DrJimpae 占皮<br>華森暗碼士腐蝕故事</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/tOHcS65Evws" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			
+		</aside>
+		
+		<aside class="cha" id="mirage">
+		<h2 class="aside"><strong>幻象<br>Mirage</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-mirage.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">幻影魔術師</h1><h3 class="title">「我這人就是不太嚴肅。可能是因為我太宅了， 我看我得多出門一點。」</h3>
+		
+		<p>幻象就是喜歡與眾不同。作為四兄弟中的老么，他擅長透過戲弄人來吸引目光。他唯一認真看待的東西就是幻影鐵馭科技：這個能創造幻影的科技是由他的工程師母親介紹給他的，他從此著迷於此技術並盡力學習所有相關知識。儘管他的兄弟們都在邊境戰爭中失蹤了，幻象和他的母親仍然持續研發幻影裝置，這項工作讓他們倆越來越親近。
+			
+			<br><br>擔任酒保來討生活的幻象常常從客人口中聽說 Apex 競賽的精彩故事和贏家所能獲得財富與榮耀。儘管這聽起來十分美好，他卻不能冒險讓她的母親斷後－－直到她給了幻象一組客製化的幻影裝置並要他去追尋自己的夢想。現在幻象成為了 Apex 競賽中的焦點人物，他擅長以智取敵並獲得邊疆觀眾的喜愛。</p>
+		
+		<p><b>真實姓名</b>：艾略特‧威特<br><b>年齡</b>：30<br><b>家園</b>：慰藉<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-mirage.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>瘋貓--派出投影誘餌來混淆敵人。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-mirage.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>	無影無蹤……--使用重生信號台和復活隊友時自動隱形。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-mirage.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>派對焦點--部屬一批誘餌來干擾敵人。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為feat.4K<br>幻象入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/Ivnrr0Hs2yM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">角色預告片</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/gPHlrmyM8v4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			
+		</aside>
+		
+		<aside class="cha" id="oc">
+		<h2 class="aside"><strong>辛烷<br>Octane</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-octane.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">高速勇者</h1><h3 class="title">「哇咧，……真是刺激！」</h3>
+		
+		<p>有一天，奧克塔維奧‧席爾瓦感到很無聊。事實上，他大多時候都感到很無聊。作為席爾瓦製藥商忙碌的執行總裁的兒子，他一生無欲無求，他透過搏命的特技表演來取悅自己並發佈令他的粉絲們瞠目結舌的幻影影片。而這一天，為了打破紀錄，他打算在附近的特技場地中將自己彈射至終點－－而彈射的方式卻是使用手榴彈。
+			
+			<br><br>在醫療室中躺了數個小時後，醫生們告知他，他的腿傷將結束他的冒險生涯。奧克塔維奧並不願意接受這個事實，他轉而向他的一位老朋友來尋求幫助：阿傑‧切，他哀求她透過偽造文件來幫他取得一條機械腿。現在，他能夠快速地修復他的四肢，奧克塔維奧因此開始認為區區線上特技根本不算什麼：終極的腎上腺素快感－－Apex 競賽正在呼喚著他。現在他將以前所未見、最了不起、最搏命的招式來成為 Apex 冠軍。或許在競技場中，他就不會再感到無聊了。</p>
+		
+		<p><b>真實姓名</b>：奧克塔維奧·席爾瓦<br><b>年齡</b>：24<br><b>家園</b>：普薩瑪忒<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-octane.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>	興奮藥劑--移動速度提升30%，持續六秒。使用時消耗生命值。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-octane.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>快速修復--生命值將自動恢復。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-octane.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>發射平台--部屬跳躍平台來將隊友彈入空中。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為<br>辛烷入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/bnSm9oEYLe4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">Gamer Secret 玩家機密<br>【Octane 辛烷】的故事</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/wUJ-NpPCIbs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="wattson">
+		<h2 class="aside"><strong>華森<br>Wattson</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-wattson.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">靜止護衛</h1><h3 class="title">「力量就是一切，你卻錯以為你擁有了它。」</h3>
+		
+		<p>娜塔莉「華森」帕克特是 Apex 競賽中的一個老面孔，不過大家認識她的原因卻與大多數人不同。她是競賽的主電子工程師之女，她為了待在父親身邊熟讀了他的筆記，也因此在小小年紀就找到了自己的目標。儘管她有時非常容易分心，也有時非常專注，電學卻深深地迷住了她。對她來說，電力的規律性和可預知的流動比世界上的其他東西還容易理解。
+			
+			<br><br>她熟讀這方面的所有書籍並成為了一名技術高超的工程師，最後她被聘僱來打造 Apex 競賽的改造封鎖圓圈。不幸的是，她的父親在開幕當天去世了，只留下她孤伶伶的一個人。在她人生的最低潮，一群參賽者邀請了她一起進入競技場並向她保證這裡永遠都會是她的家。現在她在她協助打造的競技場中和她的朋友們一起戰鬥、摧毀來襲彈藥、補充防護罩、打造柵欄並使用電塔來壓制激烈的戰鬥。沒有人比華森更瞭解這座競技場－－所有低估她的人都會大吃一驚。</p>
+		
+		<p><b>真實姓名</b>：	娜塔莉‧帕克特<br><b>年齡</b>：22<br><b>家園</b>：索拉斯<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-wattson.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>邊界安全--連接節點來創造能夠傷害並減速敵人的通電柵欄。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-wattson.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>天才火花--終極促進劑將完全填滿你的絕招。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-wattson.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>攔截塔--架設一個能摧毀所有來襲彈藥並修補受損防護罩的通電的電塔。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">痛不念Tom<br>華森入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/8ynbgKMdvjc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--父親的信</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/jCYB1BeDv1w?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="plane">
+		<h2 class="aside"><strong>暗碼士<br>Crypto</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/legends-character-tiles/apex-grid-tile-legends-crypto.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">監視專家</h1><h3 class="title">「做好了準備後，想要害怕都難。」</h3>
+		
+		<p>暗碼士擅長保密。一名精明的駭客和密碼專家，他使用空中無人機來隱蔽地在 Apex 競賽中監視對手。他也有著自己的秘密：他的名字是朴泰俊，他加入了 Apex 競賽來找出那些讓他背上謀殺罪的人。
+			
+			<br><br>身為一名孤兒，朴泰俊和他的寄養妹妹米菈‧亞歷山大一起逃脫了悲慘的過去並成為了傭兵組織的電腦工程師。有一天，朴泰俊和米菈在 Apex 競賽的電腦系統深處發現了一個能夠預測任何 Apex 競賽比賽結果的演算法。這引起了一些不法之徒的注意－－隔天，米菈便消失了，而朴泰俊在被栽贓了謀殺米菈的罪名後被迫隱藏身份。現在他加入了競賽來洗刷自己的名譽，因為有時候，最好的隱藏地點就是鎂光燈之下。</p>
+		
+		<p><b>真實姓名</b>：朴泰俊<br><b>年齡</b>：31<br><b>家鄉星球</b>：蓋亞<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-tactical-crypto.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>監視無人機--部屬一架空中無人機來讓你俯視周遭環境。當無人機被摧毀後，必須等待四十秒冷卻時間才能再次部屬另一架。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-passive-crypto.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>神經連結--標記你位置30公尺內被監視無人機偵測到的敵人，並讓你和你的隊友們能夠看見他們。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2019/01/ability-icons/apex-grid-tile-legends-abilities-ultimate-crypto.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>無人機 EMP--你的監視無人機會釋放一道電磁脈衝來造成防護罩傷害、減緩敵人速度並破壞陷阱。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為<br>暗碼士入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/tZvPMen59ZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--永遠的家庭</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/5_8WHxyW86o?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="rev">
+		<h2 class="aside"><strong>亡靈<br>Revenant</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/02/apex-legend-revenant-grid-tile.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">合成惡夢</h1><h3 class="title">「我已經見過另一端了，皮囊。那裡什麼也沒有。你什麼也不是。」</h3>
+		
+		<p>亡靈曾經是個人類，他曾經是傭兵組織中最強大的殺手。在過去，當他照鏡子時，鏡中是個人類的臉龐。不過時間改變了一切，當他的程式出現錯誤時，他發現傭兵組織與漢蒙機器人公司把他變成了一個由鋼鐵和殘存血肉所組成的夢魘。他的主人一次又一次地將他重生為複製品，並在復活他之後一次又一次地讓他失去記憶。
+			
+			<br><br>他發誓要獵殺所有傷害過他的人，不過已經過了兩個世紀了，他以為這些人通通都已經不在了……漢蒙機器人公司返回了邊疆後，他的復仇之心再次被點燃，而且這次，他在殺盡所有與漢蒙有關的人之前，絕不罷休。當然了，一路上順便解決幾名英雄對他來說也不算什麼。他曾經需要殺人的理由……但他不再是那個男人了。</p>
+		
+		<p><b>真實姓名</b>：未知<br><b>年齡</b>：未知<br><b>家園</b>：慰藉<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/02/revenant-assets/tactical-revenant.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>沈默--投擲一個裝置，對敵人造成傷害並使其無法使用技能。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/02/revenant-assets/passive-revenant.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>潛行者--你蹲下時的移動速度比較快且能攀爬的牆壁比其他英雄更高<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/02/revenant-assets/ultimate-revenant.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>死亡圖騰--放置一個圖騰，它將保護使用者將在一段時間內不會死亡。被擊殺或擊倒時，使用者將會立即返回圖騰處。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為feat.AQI阿戚<br>亡靈入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/jGAO7V_UExY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">賽季 4 - 同化發行預告片</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/QzfsGxrCD4o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="loba">
+		<h2 class="aside"><strong>蘿芭<br>Loba</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/05/apex-grid-tile-legends-loba.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">瞬移盜賊</h1><h3 class="title">「戰鬥往往會流露出一種優雅。容我展示一下。」</h3>
+		
+		<p>當蘿芭九歲時，她看著複製品殺手亡靈殺了她的家人。蘿芭從此失去了一切，並靠著當扒手求生。隨著她的技術越來越好，蘿芭逐漸開始使用各種手段來脫離貧民的身份。當她闖入一處號稱無法被侵入的設施時，一切都改變了，她奪取了存放於其中的躍遷引擎科技。有了全新的傳送手環，無論看守多嚴密、多難取得的寶藏都逃不過她的手掌心。她也因此達成了進入上層社會的夢想。
+			
+			<br><br>他一則謠言傳遍了邊疆：要是你想要一個受到嚴密看管的寶物，找蘿芭就對了。她幾乎忘掉了自己的過去，但此時，亡靈卻加入了競賽，這也使她的過去成為了她的未來。一心想要殺死亡靈的蘿芭，破壞了一處充滿亡靈身軀的設施，同時將骷髏鎮與雷鳴擂台化為烏有。然而，她發現這不過是隱藏於邊境四處的諸多工廠之一。現在，她要加入競賽來找出消滅他的方式。更何況，競技場裡充滿了各種等著她去盜取的寶藏。<br>要是她運氣好，復仇遲早會到來。屆時，她將專注在戰場上的寶藏。</p>
+		
+		<p><b>真實姓名</b>：羅芭．安德拉德<br><b>年齡</b>：34<br><b>家園</b>：無<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/05/apex-grid-tile-legends-abilities-tactical-loba.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>盜賊之友--投擲你的躍遷手環來傳送到難以達到的地方或是逃脫困境。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/05/apex-grid-tile-legends-abilities-passive-loba.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>識貨--穿牆看見附近的史詩級與傳說級戰利品。範圍跟精品黑市一樣。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/05/apex-grid-tile-legends-abilities-ultimate-loba.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>精品黑市--部屬一個行動裝置來讓你將附近的戰利品傳送到道具欄中。每個隊友或是敵方英雄最多可取得兩件道具。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為<br>蘿芭入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/dl1tWhRt5hM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--盜賊傳奇</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/RH3Rp80rbkQ?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="ram">
+		<h2 class="aside"><strong>蕾帕特<br>Rampart</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/08/rampart/apex-grid-tile-legends-rampart.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">強化模組師</h1><h3 class="title">「要是我讓你失望，應該是因為我不想再帶你了。」</h3>
+		
+		<p>蕾帕特是一名藍領階級的私營企業老闆，她只需要一把重型槍械和一些金屬零件就能穿越危險的邊疆荒野。在蓋亞星開啟她的知名模組店之前，拉米雅‧帕里克（綽號蕾帕特）在地下試煉中打響了自己的名聲。帕里克用她的模組改裝裝備和高超的技術來爬上排行榜頂端。她開始與走私犯、組織成員和三教九流打交道。有人說，蕾帕特以外的貨都算不上是好東西。
+			
+			<br><br>帕里克從來不隱藏自己的實力，也不給人留情面。或許，這就是那晚她的商店被人襲擊的原因。她的店面被燒毀，除了一張 Apex 卡片外，什麼也沒剩。對帕里克來說，這張 Apex 卡不但是個參賽邀請－－它也代表著就算失去了店面，她並沒有失去建造這一切的東西。就如她的座右銘一般，她總是能夠「點石成金」。</p>
+		
+		<p><b>真實姓名</b>：拉米雅‧帕里克<br><b>年齡</b>：21<br><b>家鄉星球</b>：蓋亞<br><br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/08/rampart/apex-grid-tile-legends-abilities-tactical-rampart.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br>戰術技能</b><br>強化掩護--建造一面蹲伏掩護牆，這將部屬一面完整強化障壁牆，它能夠格擋來襲攻擊並強化後方射擊。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/08/rampart/apex-grid-tile-legends-abilities-passive-rampart.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>改裝填裝器--使用輕機槍或迷你砲時，提升彈匣容量並提升射速。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/08/rampart/apex-grid-tile-legends-abilities-ultimate-rampart.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>定點迷你砲「席拉」--放置一把固定機關槍以供任何人使用。高彈藥容量，裝填時間較長。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為<br>蕾帕特入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/Qeybsa6Ou2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--支持</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/M9Pmf9AB4Mo?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="horizon">
+		<h2 class="aside"><strong>天際線<br>Horizon</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/10/horizon/apex-grid-tile-legends-horizon.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">引力操縱器</h1><h3 class="title">「讓我們來玩一下物理法則吧？」</h3>
+		
+		<p>將近一個世紀之前，邊疆碰上了一場災難性的能量危機。瑪麗‧薩默斯博士是一名有魅力而古怪的天體物理學家，她被雇用來尋找解決方案。瑪麗將全家搬到了奧林匹斯上的科學研究站，並開始工作。<br>
+			在她的學徒，里德博士的協助下，瑪麗發現了布拉提恩－－她認為這是一種能夠提供無限能量的元素。但布拉提恩只會出現在黑洞的吸積盤上，所以瑪麗和里德博士踏上了這個危險的任務來證明她的理論。
+			
+			<br><br>帕瑪麗向自己的兒子牛頓承諾自己會安全回家。但里德博士卻背叛了她，她不但偷走了布拉提恩，還將她的太空梭送回黑洞的軌道。瑪麗透過自己的機智改裝了她的機器人同伴紐特來逃脫。不過黑洞內外的時間推移速度並不一樣，而她晚了 87 年。<br>現在，瑪麗一心想要取得研究資金來尋找回到過去，並與兒子團圓的方式。她以引力大師天際線的名號加入了 Apex 競賽，正好趕上了即將在下個賽季中推出的奧林匹斯－－她曾經住在這裡，這裡也是她承諾要回來的地方。</p>
+		
+		<p><b>真實姓名</b>：瑪麗‧薩默斯博士<br><b>年齡</b>：37（大概還得加上額外 88 年……）<br><b>家鄉星球</b>：普薩瑪忒<br><br><br>
+			
+		  <img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/10/horizon/apex-grid-tile-legends-abilities-tactical-horizon.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br> 戰術技能</b><br>引力貨梯--逆轉引力的流向，讓玩家升起，並讓他們在離開時向外加速。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/10/horizon/apex-grid-tile-legends-abilities-passive-horizon.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>太空漫步--使用天際線的特製太空衣來提升空中控制力並降低墜落的撞擊力。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2020/10/horizon/apex-grid-tile-legends-abilities-ultimate-horizon.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>黑洞--部屬紐特來創建一個微型黑洞，這能將玩家拉向它的方向，並在最後給予其一道引力衝擊。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為feat.宇宇<br>天際線入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/j-U-d4HGH44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--承諾</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/k-amupfoQBE?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="fuse">
+		<h2 class="aside"><strong>轟哥<br>Fuse</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/01/apex-grid-tile-legends-fuse.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">不拘小節的炸藥專家</h1><h3 class="title">「有什麼見不得光的勾當，通通交給我。」</h3>
+		
+		<p>無論是男女老少，大家都喜歡這名充滿男人味的男人。轟哥一直是孤軍作戰……而且他自己也很清楚。轟哥是一名樂觀而且從容不迫的炸藥愛好者，在爆炸方面，他幾乎無所不能。轟哥從不缺乏自信，但往往卻是有勇無謀。他喜歡「先炸後奏」，而且總是在尋找寶藏。
+			
+			<br><br>轟哥從小在彈雨長大－－那是一座由各界軍閥輪流統治的殘酷星球，那裡充滿了混亂、謀殺和歡樂的時光。他大半輩子都和青梅竹馬瑪吉一起擔任傭兵。然而她想成為彈雨最強大的軍閥，轟哥卻比較喜歡競技場中的生活。在晚年時，轟哥在彈雨的血腥運動「骨籠」中找到了自己的歸宿。他證明了自己才是整個星球上最強、最有魅力的角鬥士。但是，他卻想要登上最大的舞台「Apex 競賽」。彈雨處於獨立太空時，他的這個夢想並不可能達成，但是現在這座星球加入了組織，他也有了這個機會。不過，這一切卻是有代價的－－瑪吉是不會輕易放他走的。</p>
+		
+		<p><b>真實姓名</b>：華特．菲茲洛伊<br><b>年齡</b>：54<br><b>家鄉星球</b>：彈雨<br><br><br>
+			
+		  <img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/season-8/fuse-page/apex-grid-tile-legends-abilities-tactical-fuse.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br> 戰術技能</b><br>集束拳--投擲一枚會在碰撞後持續發出空爆炸藥的集束炸彈。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/season-8/fuse-page/apex-grid-tile-legends-abilities-passive-fuse.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>擲彈兵--每個道具欄可疊加額外手榴彈。手榴彈射得更遠、更快、更精準。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/season-8/fuse-page/apex-grid-tile-legends-abilities-ultimate-fuse.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>龐然巨彈--發射轟炸，以使目標區域受火牆包圍。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">DrJimpae 占皮<br>轟哥入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/vT016YUyuLY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--顛峰狀態</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/NKOVl6F8bjA?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="valk">
+		<h2 class="aside"><strong>瓦爾基里<br>Valkyrie</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/04/apex-grid-tile-legends-valkyrie.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">有翼復仇者</h1><h3 class="title">「整片天空都是我的地盤。」</h3>
+		
+		<p>大膽、莽撞、潑辣且凶悍的今原香衣璃可不怕使用賄賂的手段或是犯法。小時候，她偷了一具泰坦。這具泰坦屬於她父親，而她父親的呼叫代號是毒蛇。她希望在長大之後跟自己父親一樣，但是隔天父親去執行任務後，卻一去不回。從某種層面來說，她依然繼承了他的衣缽：雖然不是泰坦，但是她的船艦卻讓她能夠過上不錯的日子。然而，她的人生卻完全不一樣。白天，她靠走私貴重貨物維生；晚上，她會在酒吧裡與不法之徒和傭兵們拼酒。但儘管她有得是女人、烈酒和對天空的熱情，她卻仍然執著於找出派父親去冒險的那個人：他的指揮官，庫本．布里斯克。
+			
+			<br><br>她找到了布里斯克，並準備要殺了他。但他提及她父親時，口吻中滿是敬意——然後他要她變得更強。最後，她還是朝他開了一槍。但卻沒有殺了他。她只要知道自己有能力這麼做就行了。嗯， 她還順手將布里斯克手中的 Apex 競賽卡給拿走。<br>她用毒蛇的北極星中殘存的飛行核心打造了一個精緻的新噴射背包來紀念自己的父親。此刻，今原香衣璃終於能夠自己遨翔……到了最後，她還是以某種方式繼承了父親的泰坦。</p>
+		
+		<p><b>真實姓名</b>：今原香衣璃<br><b>年齡</b>：30<br><b>家鄉星球</b>：安吉利亞<br><br><br>
+			
+		  <img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/04/apex-grid-tile-legends-abilities-tactical-valkyrie.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br> 戰術技能</b><br>飛彈天降--發射一群迷你火箭，混淆敵人並對其造成傷害。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/04/apex-grid-tile-legends-abilities-passive-valkyrie.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>垂直起降噴射器--使用噴射背包飛行。燃料有限，但會不斷恢復。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/04/apex-grid-tile-legends-abilities-ultimate-valkyrie.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>天際俯衝--衝入空中並進行跳傘。隊友能夠在起飛時加入你。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為feat.杰倫<br>瓦爾基里入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/kWMDkRS1vEg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--北極星</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/FTk9VD2nPuw?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="seer">
+		<h2 class="aside"><strong>席爾<br>Seer</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/07/seer-assets/apex-grid-tile-legends-seer.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">埋伏大師</h1><h3 class="title">「要是他們想看，那就讓他們看個夠。」</h3>
+		
+		<p>在出生之前，預言指出席爾會為這個世界帶來痛苦－－他誕生的那一夜，一顆隕石從天而降並擊中了他星球上的月球。這被當成一種惡兆，而當歐比．艾德拉辛姆睜開他那雙淺藍色的雙眼時，他的社群把他當成了一名受到詛咒的孩子。但他的父母卻並沒有這麼想，他們發自內心地愛著他，因為他們看見的只有他們悲天憫人且創意十足的兒子。當他受到競技場隆重的場面吸引時，他們甚至支持他參賽並在其中表達自我。
+			
+			<br><br>一開始，群眾並不知道該怎麼看待他。但隨著一場場的勝利，他的力量也越來越強，他在競技場中的表現也越來越好。在他打響名聲的同時，一件奇怪的事也開始發生……觀眾之中那些被欺壓、被遺忘的邊緣人感到自己跟席爾很相似。不久後，成群的人開始來觀看他戰鬥，並把席爾當成自己的鬥士。現在，這名競技場中的英雄來到了 Apex 競賽，而且他已經是個家喻戶曉的人物了。這名在惡兆與恐怖傳言中誕生的男孩，現在利用自己的身世成為一名更了不起的英雄。他就是席爾－－他代表那些被排擠、不被接受且標新立異的人。</p>
+		
+		<p><b>真實姓名</b>：歐比．艾德拉辛姆<br><b>年齡</b>：26<br><b>家鄉星球</b>：波里斯<br><br><br>
+			
+		  <img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/07/seer-assets/apex-grid-tile-legends-abilities-tactical-seer.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br> 戰術技能</b><br>	注意焦點--席爾召喚微型無人機來發出能穿牆的延遲爆炸訊號，藉以干擾並暴露敵人。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/07/seer-assets/apex-grid-tile-legends-abilities-passive-seer.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>尋心者--瞄準時，聽見並想向附近敵人的心跳。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/images/2021/07/seer-assets/apex-grid-tile-legends-abilities-ultimate-seer.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>盛大展演--創建一個微型無人機球體，以顯示正在快速移動或發射武器的敵人位置。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為feat.柔雨<br>席爾入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/H3ypQyLyD6Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--羽化</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/vHWlJlMkTcg?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="ash">
+		<h2 class="aside"><strong>艾許<br>Ash</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/ash/apex-grid-tile-legends-ash.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">敏銳煽動者</h1><h3 class="title">「找出敵方的弱點，然後滅了敵人。」</h3>
+		
+		<p>在環境嚴酷的邊境出生，還是人類的艾許莉·里德博士年紀輕輕就瞭解，沒有其他人會照顧自己。有一天，她被傭兵團雇用來執行一件困難的任務：從邊疆的奧林匹斯竊取被研究的燃料來源。里德完美地完成了任務，她侵入並操縱了研究員多年。當實驗室自毀後，她也死了。<br>但事實並非如此。
+			
+			<br><br>她的大腦被放入複製體，但這個過程卻使她失去了許多年的記憶，而她死亡時的創傷卻造成了她的人格分裂。艾許是冰冷的化身、完美主義者和渴望權力的里德博士。但在自信的外表背後，是更邪惡的存在。在和天際線碰面後，艾許的複製體程序遭到了覆蓋，讓虛弱而智慧的人格－－艾許莉逐漸甦醒。艾許加入了競賽來證明自己已經超越了全人類。艾許莉想要證明她錯了。</p>
+		
+		<p><b>真實姓名</b>：艾許莉・里德博士<br><b>年齡</b>：121<br><b>家鄉星球</b>：未知<br><br><br>
+			
+		  <img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/ash/apex-grid-tile-legends-abilities-tactical-ash.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br> 戰術技能</b><br>電弧絆索--投擲一個旋轉陷阱，對首位靠近的敵人造成傷害並暫時將其束縛。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/ash/apex-grid-tile-legends-abilities-passive-ash.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>攻防戰--艾許的地圖會顯示死亡盒的位置並標記存活的攻擊者。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/ash/apex-grid-tile-legends-abilities-ultimate-ash.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>相移裂縫--撕開一個通往目標位置的單向傳送門。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為<br>艾許入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/js0IzLgZEa8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--塵歸塵</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/RY6j8RzpI5U?list=PLsyTVfPY9KiSkGWRAWajJH7y_YUyFq3yh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="maggie">
+		<h2 class="aside"><strong>瘋狂瑪吉<br>Mad Maggie</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/mad-maggie/apex-grid-tile-legends-maggie.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">反抗軍軍閥</h1><h3 class="title">「我可以盡情大鬧全世界了。」</h3>
+		
+		<p>瑪格瑞特．寇希爾 - 這名總有一天會成為「瘋狂瑪吉」的女子從小在彈雨星最骯髒、偏僻的角落長大，也沒有什麼真正的家人。幸運的是，她認識了一名跟她一樣愛好混亂的好友：一名喜歡冒險且叫華特．菲茲洛伊的男孩。兩人從此形影不離，且步入青年時期後，他們兩人一同成為了傭兵。最後這二人組加入了一個強大的傭兵組織－－破裂猛爪。她也是在這裡贏得了自己的綽號「瘋狂瑪吉」。但當敵方軍閥沙丁漢姆．凱莉與組織簽訂協議後，瑪吉希望彈雨星獨立的夢想也隨之破滅，此時轟哥也為了參與競賽棄她而去，這讓瑪吉憤怒不已……
+			
+			<br><br>瑪吉計畫在轟哥登場 Apex 競賽時透過搞破壞來揭露組織不過是個外強中乾的存在，並希望激起彈雨的反抗情懷。
+轟哥組建了一支隊伍來擊敗瑪吉……最後兩人終於向彼此訴說自己的心聲，並接受了對方的決定：轟哥會一直追尋他的冒險，而瑪吉會一直追尋自己的理想。<br>在此之後，瑪吉似乎墜落身亡……但其實他被組織捕獲，並被判在 Apex 競賽中進行死鬥。然而，最後死的卻不會是她。</p>
+		
+		<p><b>真實姓名</b>：瑪格瑞特．寇希爾<br><b>年齡</b>：55<br><b>家鄉星球</b>：	彈雨<br><br><br>
+			
+		  <img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/mad-maggie/apex-grid-tile-legends-abilities-tactical-maggie.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br> 戰術技能</b><br>暴動鑽頭--發射能夠穿透障礙物灼燒敵人的鑽頭。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/mad-maggie/apex-grid-tile-legends-abilities-passive-maggie.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>軍閥之怒--暫時螢光你傷害過的敵人，且使用霰彈槍時移動速度較高。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/legends/mad-maggie/apex-grid-tile-legends-abilities-ultimate-maggie.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>火爆狂球--投擲一顆能釋放加速墊的球，並會在敵人附近引爆。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">WuWei無為<br>瘋狂瑪吉入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/QXiIfgx-P3A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--審判</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/tK5x4l62Ccg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+		
+		<aside class="cha" id="newcastle">
+		<h2 class="aside"><strong>紐卡索<br>Newcastle</strong></h2><br><br>
+		<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/saviors/newcastle-legends-page/apex-grid-tile-legends-newcastle.png.adapt.crop16x9.png" width="100%">
+	  </aside>
+		
+	<section class="self"><h1 class="title">英勇守護者</h1><h3 class="title">「躲到我後面，這樣就安全了，簡單。」</h3>
+		
+		<p>拉蒙特．克雷格不像社區附近的其他老爸。是沒錯，他也會送孩子去上學，晚上還會陪伴小嬰兒，裝出各種不同的聲音唸床邊故事。但拉蒙特有秘密。十三年前，在最後一次大戰中，拉蒙特負責擔任 IMC 的頂尖士兵。但當他發現自己的盟友是「壞人」後，他做出足以改變一生的決定：他選擇逃兵，拋棄自己的妹妹安妮塔，也不再使用自己的真名「傑克森．威廉斯」。<br>「拉蒙特」搬家到名為哈里斯谷的恬適小鎮，在那邊找到自己的愛人並與對方結婚。哈里斯谷十分平和，甚至不需要執法單位或政府來維持秩序。他們只要有「紐卡索」這位騎士就足夠了。但這位騎士有他自己的秘密。
+			
+			<br><br>在哈里斯谷人民絲毫沒有察覺的情況下，紐卡索出賣了這座小鎮，只為償還他的債務，而如今對方也已經找上門來。可紐卡索最終還是還不出債務，因此遭到來自失落家族的暴徒殺害，但這些暴徒沒有注意到的是，拉蒙特目睹了這一切的經過。拉蒙特運用自己的軍事敏銳度擊敗了這些暴徒，但事情並不會這麼簡單就結束。他們的領袖告訴拉蒙特，在他和他的手下離開之後，還會有更多麻煩找上拉蒙特，也還會有更多他的同夥陸續現身。<br>也就是在那時，拉蒙特想出了一個危險的解決方法。穿上頭盔與裝甲後，他就能夠以紐卡索的身分參加資格賽，並做到紐卡索原本辦不到的事情：晉級 Apex 競賽。如果能拿到比賽的優渥獎金，那麼他絕對有辦法清償債務。不過，他這麼做伴隨著真實身分曝光的風險，他並不擔心別人發現他是拉蒙特．克雷格，而是擔心他的妹妹邦加羅爾會認出自己是傑克森．威廉斯。</p>
+		
+		<p><b>真實姓名</b>：傑克森．威廉斯<br><b>年齡</b>：40<br><b>家鄉星球</b>：網架<br><br><br>
+			
+		  <img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/saviors/newcastle-legends-page/apex-grid-tile-legends-abilities-tactical-newcastle.png.adapt.crop16x9.652w.png" width="15%">
+			
+			<b style="color: red"><br> 戰術技能</b><br>機動護盾--投擲能夠產生移動式能量防護罩的可控無人機。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/saviors/newcastle-legends-page/apex-grid-tile-legends-abilities-passive-newcastle.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">被動技能</b><br>救治傷者--在急救的同時拖動倒下的友軍，並使用急救防護罩來保護對方。<br><br>
+			
+			<img src="https://media.contentapi.ea.com/content/dam/apex-legends/common/saviors/newcastle-legends-page/apex-grid-tile-legends-abilities-ultimate-newcastle.png.adapt.crop16x9.652w.png" width="15%"><br>
+			
+			<b style="color: red">絕招</b><br>堡壘護牆--跳到盟友的所在位置或目標區域，然後重擊地面並建造堅強的防禦工事。</p>
+	  </section>
+		
+		<aside class="video">
+			<b>影片</b><br><br>
+			<p class="intro">DrJimpae 占皮<br>紐卡索入門介紹</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/XueculcBItk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br><p class="intro">邊疆故事--英雄</p>
+			<iframe width="100%" height="25%" src="https://www.youtube.com/embed/s9WqN-5dYYI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</aside>
+	</div>
+</body>
+</html>
